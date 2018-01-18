@@ -10,7 +10,7 @@
     "ws": "^4.0.0"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "test": "./node_modules/.bin/mocha 'test/**/*.js'",
     "seed": "node models/seed.js"
   },
