@@ -21,6 +21,24 @@ class Party {
     };
   };
 
+  markStarted(time) {
+    this._started = true;
+    this._timeout = time;
+  };
+
+  setCurrentQuestion(id) {
+    console.log('called set question ', id);
+    this._questionId = parseInt(id);
+  };
+
+  hasStarted() {
+    return this._started !== undefined;
+  };
+
+  welcome(ws) {
+    this.getPlayer(ws).welcome(this._timeout, this._questionId);
+  };
+
   setScore(ws, score) {
     this.getPlayer(ws).score = score;
   };

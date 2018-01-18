@@ -18,13 +18,17 @@ class Player {
     return this._ws;
   };
 
-  send(message, json_obj = JSON) {
+  welcome(time, questionId) {
+    console.log({ type: 'startQuiz', time: time, question: questionId });
+    this.send({ type: 'startQuiz', time: time, question: questionId });
+  };
 
+  send(message, json_obj = JSON) {
     if (this._isOpen()) {
       try {
         this._ws.send(json_obj.stringify(message));
       } catch(error) {
-        console.error(error);
+        console.error(error, message);
       };
     } else {
       throw new Error('client disconnected');
