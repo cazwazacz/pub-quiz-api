@@ -1,3 +1,3 @@
 # Pub Quiz API
 
-This API provides end-points for the pub quiz app.
+This API provides end-points and the websocket for the QuizLife! app.
